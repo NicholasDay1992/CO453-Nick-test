@@ -16,7 +16,7 @@ namespace ConsoleAppProject.App01
             ConvertMilesToFeet();
         }
 
-        public void ConvertMilesToFeet()
+        public string ConvertMilesToFeet()
         {
             //step 1 - input the miles
             Console.WriteLine("Enter the number of miles: ");
@@ -30,9 +30,10 @@ namespace ConsoleAppProject.App01
             // step 3 - output to screen 
 
             Console.WriteLine(miles + " miles is " + feet + " feet.");
+            return "" + miles + " miles is " + feet + " feet.";
         }
 
-        public void ConvertFeetToMiles()
+        public string ConvertFeetToMiles()
         {
             //step 1 - input the feet
             Console.WriteLine("Enter the number of feet: ");
@@ -46,7 +47,7 @@ namespace ConsoleAppProject.App01
             // step 3 - output to screen 
 
             Console.WriteLine(feet + " feet is " + miles.ToString("0.00") + " miles.");
-
+            return "" + feet + " feet is " + miles.ToString("0.00") + " miles";
         }
     }
 }
