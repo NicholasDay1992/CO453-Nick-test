@@ -10,44 +10,29 @@ namespace ConsoleAppProject.App01
     /// </author>
     public class DistanceConverter
     {
+        public DistanceConverter()
+        {
+            
+        }
         public void Run()
         {
-            ConvertFeetToMiles();
-            ConvertMilesToFeet();
-        }
+            //step 1 - input miles
 
-        public string ConvertMilesToFeet()
-        {
-            //step 1 - input the miles
-            Console.WriteLine("Enter the number of miles: ");
+            Console.WriteLine("Please enter the number of miles: ");
             string input = Console.ReadLine();
             int miles = Convert.ToInt32(input);
+            Console.WriteLine("Miles entered is: " + miles);
 
-            //step 2 - convert miles to feet
+            // step 2 - conversion process 
+            const int MILES_TO_FEET = 5280;
+            int feet = miles * MILES_TO_FEET;
 
-            int feet = miles * 5280;
-
-            // step 3 - output to screen 
+            // step 3 - output converted number of feet
 
             Console.WriteLine(miles + " miles is " + feet + " feet.");
-            return "" + miles + " miles is " + feet + " feet.";
+
+
         }
 
-        public string ConvertFeetToMiles()
-        {
-            //step 1 - input the feet
-            Console.WriteLine("Enter the number of feet: ");
-            string input = Console.ReadLine();
-            double feet = Convert.ToDouble(input);
-
-            //step 2 - convert feet to miles
-
-            double miles = feet / 5280;
-
-            // step 3 - output to screen 
-
-            Console.WriteLine(feet + " feet is " + miles.ToString("0.00") + " miles.");
-            return "" + feet + " feet is " + miles.ToString("0.00") + " miles";
-        }
     }
 }
