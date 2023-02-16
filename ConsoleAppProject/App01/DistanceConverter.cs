@@ -11,53 +11,50 @@ namespace ConsoleAppProject.App01
     public class DistanceConverter
     {
         const int MILES_TO_FEET = 5280;
-        string input;
-        int miles;
-        int feet;
+
+        double fromDistance;
+        double toDistance;
+        string fromUnit;
+        string toUnit;
+
 
         public DistanceConverter()
         {
-
+            
         }
         public void Run()
         {
-            ConvertMilesToFeet();
-            ConvertFeetToMiles();
+            fromUnit = "feet";
+            toUnit = "miles";
+            Input();
+            ConvertDistance();
+            Print();
         }
 
-        public void ConvertMilesToFeet()
+        public void Input()
         {
-            //step 1 - input miles
-
-            Console.WriteLine("Please enter the number of miles: ");
-            input = Console.ReadLine();
-            miles = Convert.ToInt32(input);
-            Console.WriteLine("Miles entered is: " + miles);
-
-            // step 2 - conversion process 
-            
-            feet = miles* MILES_TO_FEET;
-
-            // step 3 - output converted number of feet
-
-            Console.WriteLine(miles + " miles is " + feet + " feet.");
+            Console.WriteLine("Please enter the number of " + fromUnit);
+            fromDistance = Convert.ToDouble(Console.ReadLine());
         }
 
-        public void ConvertFeetToMiles()
+        public void ConvertDistance()
         {
-
-            //step 1 - input feet
-
-            Console.WriteLine("Please enter the number of feet: ");
-            input = Console.ReadLine();
-            feet = Convert.ToInt32(input);
-            Console.WriteLine("Feet entered is: " + feet);
-
-            // step 2 - conversion process 
-            miles = feet / MILES_TO_FEET;
-
-            // step 3 - output converted number of miles
-            Console.WriteLine(feet + " feet is " + miles + " miles.");
+            if(fromUnit == "miles" && toUnit == "feet")
+            {
+                toDistance = fromDistance * MILES_TO_FEET;
+            }
+            else if(fromUnit == "feet" && toUnit == "miles")
+            {
+                 toDistance = fromDistance / MILES_TO_FEET;
+            }
         }
+
+        public void Print()
+        {
+            //Console.WriteLine(feet.ToString("0.000") + " feet is " + miles.ToString("0.000") + " miles." );
+
+            Console.WriteLine(fromDistance + " " + fromUnit + " is " + toDistance + " " + toUnit);
+        }
+
     }
 }
