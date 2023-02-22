@@ -12,7 +12,7 @@ namespace ConsoleAppProject.App01
     {
         const int MILES_TO_FEET = 5280;
 
-        double fromDistance;
+        public double fromDistance;
         double toDistance;
         string fromUnit;
         string toUnit;
