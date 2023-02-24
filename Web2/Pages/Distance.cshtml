@@ -1,0 +1,20 @@
+﻿@page
+@model Web2.Pages.DistanceModel
+@using ConsoleAppProject.App01
+@{
+    <h1>Welcome to the DistanceConverter page!</h1>
+    <select asp-for="App01.fromUnit">
+        <option>miles</option>
+        <option>metres</option>
+        <option>feet</option>
+    </select>
+    <h2> enter the from distance</h2>
+    <input type = "text" value=0 />
+    <select asp-for="App01.fromUnit">
+                <option>miles</option>
+        <option>metres</option>
+        <option>feet</option>
+    </select>
+
+}
+
